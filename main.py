@@ -668,41 +668,15 @@ if st.session_state.started:
             return []
         except Exception as e:
             st.error(f"An error occurred: {e}")
-            return []
-
-
-    import mysql.connector
-    def submit_contact_form(name, email, message):
-        try:
-            conn = get_mysql_connection()
-            cursor = conn.cursor()
-            query = "INSERT INTO contacts (name, email, message) VALUES (%s, %s, %s)"
-            values = (name, email, message)
-            cursor.execute(query, values)
-            conn.commit()
-            st.success("Thank you! Your message has been submitted.")
-        except mysql.connector.Error as err:
-            st.error(f"Error: {err}")
-        finally:
-            cursor.close()
-            conn.close()
-
-    # Establish a MySQL connection
-    def get_mysql_connection():
-        return mysql.connector.connect(
-            host="localhost",           # e.g., "localhost"
-            user="root",
-            port=3306,# Your MySQL username
-            password="7731842355@Amn",   # Your MySQL password
-            database="contact_forms"    # Database to store contact form data
-        )
+            return
+     
 
 
 
     
     # Sidebar Menu
     st.sidebar.title("Navigation")
-    options = st.sidebar.radio("Go to", ["Platform Selection", "About page", "Technical Details","contact form"])
+    options = st.sidebar.radio("Go to", ["Platform Selection", "About page", "Technical Details"])
 
     # Platform Selection
     if options == "Platform Selection":
@@ -861,22 +835,6 @@ if st.session_state.started:
 
         """)
 
-    elif options=="contact form":
-        st.header("Contact Us")
-        st.write("We’d love to hear from you! If you have any questions, feedback, or inquiries, please fill out the form below:")
-
-
-        name = st.text_input("Name")
-        email = st.text_input("Email")
-        message = st.text_area("Message")
-        submitted = st.button("Submit")
-
-        if submitted:
-            if name and email and message:
-                submit_contact_form(name, email, message)
-                st.success("Thank you for your message! We'll get back to you soon.")
-            else:
-                st.error("Please fill out all fields.")
 
     # Footer
     st.sidebar.write("© 2024 Feedback Fusion")
