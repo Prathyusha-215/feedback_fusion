@@ -1,5 +1,4 @@
 import streamlit as st
-from streamlit_extras.colored_header import colored_header
 import matplotlib.pyplot as plt
 import seaborn as sns
 import pandas as pd
