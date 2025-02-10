@@ -1,2 +1,15 @@
 streamlit
 streamlit_extras
+matplotlib
+seaborn
+pandas
+numpy
+scikit-learn
+nltk
+requests
+beautifulsoup4
+google-api-python-client
+plotly
+scipy
+selenium
+webdriver-manager
