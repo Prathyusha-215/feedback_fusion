@@ -819,7 +819,7 @@ if st.session_state.started:
 
         - **Web Scraping:**
         - requests: For sending HTTP requests and fetching web pages.
-        - BeautifulSoup (from bs4): To parse HTML content and extract data from websites.
+        - BeautifulSoup (from bs4):To parse HTML content and extract data from websites.
 
         - **Visualization:**
         - matplotlib.pyplot: To create and display pie charts, scatter plots, and histograms.
