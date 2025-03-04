@@ -1,3 +1,4 @@
+Streamlit, version 1.37.1
 streamlit
 streamlit_extras
 matplotlib
